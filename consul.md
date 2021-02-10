@@ -15,6 +15,7 @@
 // todo: add link to ansible role
 
 ### Spring.
+https://cloud.spring.io/spring-cloud-consul/reference/html/#spring-cloud-consul
 build.gradle
 <pre>
 dependencies {
