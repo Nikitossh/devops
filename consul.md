@@ -46,7 +46,14 @@ spring:
       port: 8500
 </pre>
 
-#### Enable `/actuator/refresh` endpoint. Add to application.yml in Consul
+### We can use refresh in two ways:
+1. And to enable `watch` feature of Consul
+2. To refresh by hand with `POST` request.
+
+### To use watch
+change config value `spring.cloud.consul.config.watch.enabled=true`
+
+#### To enable `/actuator/refresh` endpoint add to application.yml in Consul
 <pre>
 management:
   endpoints:
@@ -64,7 +71,7 @@ https://cloud.spring.io/spring-cloud-static/spring-cloud.html#_refresh_scope
 
 To use refresh for config variables you must send POST request to /refresh endpoint:
 <pre>
-$ curl -d '{}' -H 'Content-Type: application/json' http://localhost:8080/actuator/refresh
+$ curl -X POST -d '{}' -H 'Content-Type: application/json' http://localhost:8080/actuator/refresh
 </pre>
 
 
